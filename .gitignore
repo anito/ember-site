@@ -1,0 +1,7 @@
+node_modules/
+.next/
+out/
+_test.png
+*.blend1
+__pycache__/
+next-env.d.ts

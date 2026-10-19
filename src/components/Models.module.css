@@ -1,0 +1,120 @@
+.models {
+	padding: clamp(5rem, 12vw, 10rem) var(--gutter);
+	background: rgba(10, 14, 22, 0.62);
+	border-block: 1px solid var(--line);
+}
+.head {
+	max-width: 76rem;
+	margin: 0 auto clamp(2.5rem, 6vw, 4.5rem);
+}
+.head h2 {
+	font-family: var(--display);
+	font-weight: 500;
+	font-size: clamp(2.3rem, 5.4vw, 5rem);
+	line-height: 1;
+	letter-spacing: -0.04em;
+	margin-top: 1.2rem;
+}
+.grid {
+	max-width: 76rem;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(1rem, 2vw, 1.5rem);
+}
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+	padding: 1.6rem;
+	border: 1px solid var(--line);
+	border-radius: 1.6rem;
+	background: linear-gradient(160deg, rgba(20, 28, 44, 0.75), rgba(8, 11, 18, 0.75));
+}
+.card h3 {
+	font-family: var(--display);
+	font-weight: 500;
+	font-size: 1.6rem;
+	letter-spacing: -0.03em;
+}
+.tag {
+	font-family: var(--display);
+	color: var(--accent);
+}
+.card p {
+	color: var(--muted);
+	font-size: 0.93rem;
+}
+.new {
+	position: absolute;
+	top: 1.4rem;
+	right: 1.4rem;
+	padding: 0.2em 0.7em;
+	border-radius: 999px;
+	background: var(--amber);
+	color: #1a1105;
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+.stack {
+	position: relative;
+	height: 9rem;
+	margin-bottom: 0.4rem;
+}
+.stack i {
+	position: absolute;
+	left: 50%;
+	bottom: calc(1rem + var(--k) * 1.15rem);
+	width: 9.5rem;
+	height: 3rem;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	background: radial-gradient(ellipse at 50% 30%, #c98d4f, #7a4a22 70%);
+	box-shadow: 0 0.55rem 0 #4e2d12, 0 1.2rem 1.6rem rgba(0, 0, 0, 0.55), inset 0 0 0 2px rgba(255, 210, 160, 0.25);
+}
+.stack i::after {
+	content: '';
+	position: absolute;
+	inset: 0.55rem 1.4rem;
+	border-radius: 50%;
+	border: 1.5px solid color-mix(in srgb, var(--cyan) 70%, transparent);
+	box-shadow: 0 0 14px color-mix(in srgb, var(--cyan) 50%, transparent);
+}
+.card dl {
+	margin: 0.4rem 0 0.8rem;
+	border-top: 1px solid var(--line);
+	font-size: 0.85rem;
+}
+.card dl div {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.5rem 0;
+	border-bottom: 1px solid var(--line);
+}
+.card dt {
+	color: var(--muted);
+}
+.card dd {
+	text-align: right;
+}
+.card .btn {
+	margin-top: auto;
+	justify-content: center;
+}
+.card .btn:disabled {
+	opacity: 0.7;
+	cursor: default;
+}
+.fine {
+	color: var(--muted);
+	font-size: 0.78rem;
+}
+@media (max-width: 860px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}

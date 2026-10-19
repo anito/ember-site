@@ -1,0 +1,422 @@
+.story {
+		position: relative;
+		background: var(--bg);
+	}
+	.stage {
+		--bg: #05070b;
+		--accent: #3fd0ff;
+		position: relative;
+		height: 100vh;
+		height: 100svh;
+		overflow: hidden;
+		background: var(--bg);
+		isolation: isolate;
+	}
+	.glow {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		background:
+			radial-gradient(ellipse 52% 56% at 50% 46%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 70%),
+			radial-gradient(ellipse 90% 40% at 50% 100%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%);
+	}
+	.floor {
+		position: absolute;
+		z-index: 1;
+		left: -60%;
+		right: -60%;
+		bottom: -2vh;
+		height: 62vh;
+		background-image:
+			linear-gradient(color-mix(in srgb, var(--accent) 34%, transparent) 1px, transparent 1px),
+			linear-gradient(90deg, color-mix(in srgb, var(--accent) 34%, transparent) 1px, transparent 1px);
+		background-size: 90px 90px;
+		transform: perspective(520px) rotateX(66deg);
+		transform-origin: 50% 100%;
+		-webkit-mask-image: linear-gradient(to top, #000 8%, transparent 78%);
+		mask-image: linear-gradient(to top, #000 8%, transparent 78%);
+		pointer-events: none;
+	}
+	.wordmark {
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		top: 4vh;
+		transform: translateX(-50%);
+		font-family: var(--display);
+		font-weight: 700;
+		font-size: min(36vw, 54vh);
+		line-height: 0.85;
+		letter-spacing: -0.04em;
+		white-space: nowrap;
+		color: transparent;
+		-webkit-text-stroke: 1px color-mix(in srgb, var(--accent) 38%, transparent);
+		user-select: none;
+		pointer-events: none;
+	}
+	.dust {
+		position: absolute;
+		inset: 0;
+		z-index: 3;
+		opacity: 0.45;
+		pointer-events: none;
+	}
+	.dust i {
+		position: absolute;
+		bottom: 8%;
+		width: var(--s);
+		height: var(--s);
+		border-radius: 50%;
+		background: var(--accent);
+		box-shadow: 0 0 10px 1px var(--accent);
+		opacity: 0;
+	}
+	.cup {
+		position: absolute;
+		z-index: 3;
+		left: 50%;
+		top: 50%;
+		width: min(94vw, 84vh);
+		aspect-ratio: 1;
+		pointer-events: none;
+		will-change: transform;
+	}
+	.gl {
+		position: absolute;
+		inset: 0;
+		z-index: 4;
+		pointer-events: none;
+	}
+	.rings {
+		position: absolute;
+		inset: -22%;
+		width: 144%;
+		max-width: none;
+		height: 144%;
+		overflow: visible;
+	}
+	.r {
+		fill: none;
+		stroke: var(--accent);
+		stroke-width: 0.25;
+		vector-effect: non-scaling-stroke;
+		stroke-width: 1;
+	}
+	.r-a {
+		opacity: 0.35;
+	}
+	.r-b {
+		opacity: 0.2;
+		stroke-dasharray: 1 5;
+	}
+	.r-c {
+		opacity: 0.12;
+	}
+	.r-arc {
+		stroke-width: 2.4;
+		opacity: 0.9;
+		stroke-dasharray: 38 251;
+		stroke-linecap: round;
+	}
+	.r-arc2 {
+		stroke-width: 1.6;
+		opacity: 0.55;
+		stroke-dasharray: 90 425;
+		stroke-linecap: round;
+	}
+	.dot {
+		fill: #fff;
+		filter: drop-shadow(0 0 3px var(--accent));
+	}
+	.dot.dim {
+		opacity: 0.5;
+	}
+
+	.copy {
+		position: absolute;
+		z-index: 6;
+	}
+	.hero {
+		left: var(--gutter);
+		right: var(--gutter);
+		bottom: max(5vh, 2.2rem);
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 2rem;
+	}
+	.hero-left .eyebrow {
+		margin-bottom: 1.1rem;
+	}
+	.story h1 {
+		font-family: var(--display);
+		font-weight: 500;
+		font-size: clamp(2.4rem, 5vw, 5rem);
+		line-height: 1;
+		letter-spacing: -0.035em;
+	}
+	.hero-right {
+		max-width: 24rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.4rem;
+	}
+	.lede {
+		color: var(--muted);
+		font-size: 1rem;
+	}
+	.actions {
+		display: flex;
+		gap: 0.8rem;
+		flex-wrap: wrap;
+	}
+	.chapter {
+		opacity: 0;
+		width: min(28rem, 36vw);
+	}
+	.chapter.right {
+		right: var(--gutter);
+		top: 50%;
+		translate: 0 -50%;
+	}
+	.chapter.left {
+		left: calc(var(--gutter) + 1.6rem);
+		top: 50%;
+		translate: 0 -50%;
+	}
+	.chapter.center {
+		left: 50%;
+		bottom: max(7vh, 2.5rem);
+		width: min(34rem, 86vw);
+		text-align: center;
+		translate: -50% 0;
+	}
+	.num {
+		display: block;
+		font-family: var(--display);
+		font-size: 0.8rem;
+		letter-spacing: 0.22em;
+		color: var(--accent);
+		margin-bottom: 0.9rem;
+	}
+	.chapter h2 {
+		font-family: var(--display);
+		font-weight: 500;
+		font-size: clamp(2.4rem, 4.2vw, 4rem);
+		line-height: 0.96;
+		overflow-wrap: break-word;
+		letter-spacing: -0.045em;
+		margin-bottom: 1.2rem;
+	}
+	.chapter p {
+		color: var(--muted);
+		font-size: 1.02rem;
+		max-width: 26rem;
+	}
+	.chapter.center p {
+		margin-inline: auto;
+	}
+
+	.rail {
+		position: absolute;
+		z-index: 6;
+		left: clamp(0.7rem, 1.6vw, 1.5rem);
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		flex-direction: column;
+		gap: 1.05rem;
+	}
+	.rail li {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+		font-family: var(--display);
+		font-size: 0.64rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--muted);
+		opacity: 0.5;
+		transition: opacity 0.4s;
+	}
+	.rail i {
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		border: 1.5px solid currentColor;
+		transition:
+			background 0.4s,
+			transform 0.4s var(--ease);
+	}
+	.rail span {
+		opacity: 0;
+		transform: translateX(-6px);
+		transition:
+			opacity 0.4s,
+			transform 0.5s var(--ease);
+	}
+	.rail li.active {
+		opacity: 1;
+		color: var(--accent);
+	}
+	.rail li.active i {
+		background: currentColor;
+		transform: scale(1.5);
+		box-shadow: 0 0 10px currentColor;
+	}
+	.rail li.active span {
+		opacity: 1;
+		transform: none;
+	}
+
+	/* reduced motion: no pin, stacked layout */
+	.stage.static {
+		height: auto;
+		min-height: 100svh;
+		padding: 6rem var(--gutter) 3rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+	.stage.static .cup,
+.stage.static .copy {
+		position: relative;
+		inset: auto;
+		left: auto;
+		right: auto;
+		top: auto;
+		bottom: auto;
+		translate: none;
+		width: auto;
+		opacity: 1;
+	}
+	.stage.static .cup {
+		display: none;
+	}
+	.stage.static .staticCup {
+		width: min(90vw, 34rem);
+		height: auto;
+		margin: 0 auto;
+		object-fit: contain;
+	}
+	.stage.static .rail,
+.stage.static .floor,
+.stage.static .wordmark {
+		display: none;
+	}
+
+	@media (max-width: 860px) {
+		.hero {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1.1rem;
+		}
+		.story h1 {
+			font-size: clamp(2.1rem, 9.6vw, 3.2rem);
+		}
+		.hero-right {
+			max-width: none;
+			gap: 1rem;
+		}
+		.lede {
+			font-size: 0.95rem;
+		}
+		.hero-left .eyebrow {
+			margin-bottom: 0.8rem;
+		}
+		.cup {
+			width: min(120vw, 60vh);
+		}
+		.wordmark {
+			font-size: 40vw;
+			top: 10vh;
+		}
+		.chapter,
+.chapter.right,
+.chapter.left,
+.chapter.center {
+			left: var(--gutter);
+			right: var(--gutter);
+			top: auto;
+			bottom: max(6vh, 1.8rem);
+			width: auto;
+			translate: none;
+			text-align: left;
+		}
+		.chapter.center p {
+			margin-inline: 0;
+		}
+		.chapter h2 {
+			font-size: clamp(2.1rem, 10.5vw, 3.4rem);
+			margin-bottom: 0.7rem;
+		}
+		.chapter p {
+			max-width: none;
+			font-size: 0.96rem;
+		}
+		.rail {
+			display: none;
+		}
+	}
+
+.story .ad {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7rem;
+	margin-top: 1.4rem;
+	padding: 0.45rem 0.9rem 0.45rem 0.45rem;
+	border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
+	font-family: var(--display);
+	font-size: 0.78rem;
+	letter-spacing: 0.02em;
+	color: var(--ink);
+}
+.story .ad b {
+	padding: 0.25rem 0.7rem;
+	border-radius: 999px;
+	background: var(--accent);
+	color: var(--bg);
+	font-size: 0.64rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+.story .fine {
+	display: block;
+	margin-top: 0.6rem;
+	font-size: 0.68rem;
+	color: var(--muted);
+}
+
+.fallback {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.story .parts {
+	margin-top: 1.2rem;
+	display: grid;
+	gap: 0.45rem;
+	font-family: var(--display);
+	font-size: 0.9rem;
+}
+.story .parts li {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 0.45rem 0;
+	border-top: 1px solid var(--line);
+}
+.story .parts i {
+	font-style: normal;
+	font-size: 0.68rem;
+	letter-spacing: 0.18em;
+	color: var(--accent);
+}
